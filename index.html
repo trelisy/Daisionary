@@ -3,6 +3,28 @@
 <head lang="en">
     <meta charset="UTF-8">
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
     <!--Page Title-->
     <title>Daisionary</title>
 
@@ -236,6 +258,77 @@
         </div>
     </footer>
     <!--End of Footer-->
+
+
+
+
+
+
+
+
+
+
+    <style>
+        #popup-overlay {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.5);
+          visibility: hidden;
+        }
+        
+        #popup-box {
+          background-color: #ba1eee;
+          color: #333;
+          padding: 20px;
+          width: 300px;
+          border-radius: 8px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          text-align: center;
+        }
+      
+        #popup-close, #vote-button {
+          background-color: #ff00cc;
+          color: #fff;
+          border: none;
+          padding: 10px 20px;
+          margin-top: 15px;
+          border-radius: 4px;
+          cursor: pointer;
+          text-decoration: none;
+          display: inline-block;
+        }
+      </style>
+      </head>
+      <body>
+      
+      <div id="popup-overlay">
+        <div id="popup-box">
+          <h2>Belloo</h2>
+          <a href="env.html" id="vote-button"><strong>Open me</strong></a>
+          
+        </div>
+      </div>
+      
+      <script>
+        if (!sessionStorage.getItem('popupShown')) {
+          document.getElementById('popup-overlay').style.visibility = 'visible';
+          sessionStorage.setItem('popupShown', 'true');
+        }
+      
+        document.getElementById('popup-close').onclick = function() {
+          document.getElementById('popup-overlay').style.visibility = 'hidden';
+        };
+      </script>
+      
+
+
+
 
 </div>
 
